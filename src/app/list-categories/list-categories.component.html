@@ -1,0 +1,18 @@
+<input type="text" name="search" id="search" [(ngModel)]="titre">
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let item of categories" class="col-md-4"
+            style="margin-bottom: 20px;">
+            <img src={{item.image}} onclick="alert()" alt="Grand électroménager"
+                class="img-fluid h-50 w-75">
+            <h3>{{item.title | uppercase }}</h3>
+            <button class="btn btn-primary" *ngIf="item.available else alt">Voir
+                produits</button>
+            <ng-template #alt><p style="color: blue;">Categorie non disponile
+                </p> </ng-template>
+        </div>
+
+
+    </div>
+</div>
